@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+我是登录后的主页
+<img src="/img/index.png"/>
+<br/>
+<a href="/logout">GET logout</a>
+<br />
+<form action="/logout" method="post">
+    开启csrf校验后，需要post方式退出才行
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+    <input type="submit" value="POST Logout"/>
+</form>
+</body>
+</html>

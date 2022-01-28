@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <style>
+        table tr td {
+            padding: 1px;
+            border: 1px solid black;
+            height: 30px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body align="center">
+<img src="/img/login.png"/>
+<form action="/login" method="post">
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+    <table>
+        <tr>
+            <td>用户名</td>
+            <td colspan="2"><input name="username" type="text" value="admin"/></td>
+        </tr>
+        <tr>
+            <td>密码</td>
+            <td colspan="2"><input name="password" type="password" value="user@123"/></td>
+        </tr>
+        <tr>
+            <td>验证码</td>
+            <td><input name="code" type="text" value=""/></td>
+            <td><img src="/kaptcha"/></td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                记住我<input type="checkbox" name="remember-me"/>
+                <input type="submit" value="提交"/>
+                <label th:text="${msg}"></label>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

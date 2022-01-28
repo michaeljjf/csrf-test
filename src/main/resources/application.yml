@@ -1,0 +1,17 @@
+# 应用名称
+spring:
+  application:
+    name: csrf-test
+  security:
+    user:
+      name: user
+      password: user
+      roles: admin
+  datasource:
+    url: jdbc:mysql://localhost:3306/my_security?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+
+server:
+  port: 80
+
